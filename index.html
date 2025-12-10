@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free woodworking calculators for miter angles, board feet, segmented rings, and more. Works offline!">
+    <meta name="theme-color" content="#8b4513">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Woodworking Pro">
+    
+    <title>Woodworking Pro - Free Tools & Resources</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🪚 Woodworking Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#calculators">Calculators</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Free Woodworking Tools & Calculators</h2>
+            <p>Precision calculations for your woodworking projects - completely free</p>
+            <a href="#calculators" class="cta-button">Explore Calculators</a>
+        </div>
+    </section>
+
+    <section id="calculators" class="calculators-section">
+        <h2>Woodworking Calculators</h2>
+        <div class="calculator-grid">
+            <div class="calculator-card" onclick="showCalculator('miter')">
+                <h3>📐 Miter Angle Calculator</h3>
+                <p>Calculate perfect miter angles for frames and corners</p>
+            </div>
+            <div class="calculator-card" onclick="showCalculator('compound')">
+                <h3>🔺 Compound Miter Calculator</h3>
+                <p>For angled cuts on sloped surfaces</p>
+            </div>
+            <div class="calculator-card" onclick="showCalculator('board')">
+                <h3>📏 Board Feet Calculator</h3>
+                <p>Calculate lumber volume and cost</p>
+            </div>
+            <div class="calculator-card" onclick="showCalculator('segmented')">
+                <h3>⭕ Segmented Ring Calculator</h3>
+                <p>For bowls, rings, and circular projects</p>
+            </div>
+            <div class="calculator-card" onclick="showCalculator('triangle')">
+                <h3>📊 Right Triangle Calculator</h3>
+                <p>Solve any right triangle problem</p>
+            </div>
+            <div class="calculator-card" onclick="showCalculator('rafter')">
+                <h3>🏠 Roof Rafter Calculator</h3>
+                <p>Calculate rafter lengths and angles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Modals -->
+    <div id="calculator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCalculator()">&times;</span>
+            
+            <!-- Miter Calculator -->
+            <div id="miter-calc" class="calc-content">
+                <h2>Miter Angle Calculator</h2>
+                <p class="calc-description">Calculate the miter angle needed for corners and frames</p>
+                
+                <div class="input-group">
+                    <label for="miter-sides">Number of Sides:</label>
+                    <input type="number" id="miter-sides" value="4" min="3" max="100">
+                </div>
+                
+                <button onclick="calculateMiter()" class="calc-button">Calculate</button>
+                
+                <div id="miter-result" class="result"></div>
+            </div>
+
+            <!-- Compound Miter Calculator -->
+            <div id="compound-calc" class="calc-content">
+                <h2>Compound Miter Calculator</h2>
+                <p class="calc-description">For cuts that are angled in two directions (like crown molding)</p>
+                
+                <div class="input-group">
+                    <label for="compound-corner">Corner Angle (degrees):</label>
+                    <input type="number" id="compound-corner" value="90" step="0.1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="compound-slope">Slope Angle (degrees):</label>
+                    <input type="number" id="compound-slope" value="45" step="0.1">
+                </div>
+                
+                <button onclick="calculateCompound()" class="calc-button">Calculate</button>
+                
+                <div id="compound-result" class="result"></div>
+            </div>
+
+            <!-- Board Feet Calculator -->
+            <div id="board-calc" class="calc-content">
+                <h2>Board Feet Calculator</h2>
+                <p class="calc-description">Calculate lumber volume in board feet</p>
+                
+                <div class="input-group">
+                    <label for="board-thickness">Thickness (inches):</label>
+                    <input type="number" id="board-thickness" value="1" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="board-width">Width (inches):</label>
+                    <input type="number" id="board-width" value="6" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="board-length">Length (feet):</label>
+                    <input type="number" id="board-length" value="8" step="0.25">
+                </div>
+                
+                <div class="input-group">
+                    <label for="board-quantity">Quantity:</label>
+                    <input type="number" id="board-quantity" value="1" min="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="board-price">Price per Board Foot ($):</label>
+                    <input type="number" id="board-price" value="0" step="0.01">
+                </div>
+                
+                <button onclick="calculateBoardFeet()" class="calc-button">Calculate</button>
+                
+                <div id="board-result" class="result"></div>
+            </div>
+
+            <!-- Segmented Ring Calculator -->
+            <div id="segmented-calc" class="calc-content">
+                <h2>Segmented Ring Calculator</h2>
+                <p class="calc-description">Calculate angles and dimensions for segmented turning projects</p>
+                
+                <div class="input-group">
+                    <label for="seg-segments">Number of Segments:</label>
+                    <input type="number" id="seg-segments" value="12" min="3" max="100">
+                </div>
+                
+                <div class="input-group">
+                    <label for="seg-diameter">Desired Diameter (inches):</label>
+                    <input type="number" id="seg-diameter" value="10" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="seg-thickness">Board Thickness (inches):</label>
+                    <input type="number" id="seg-thickness" value="0.75" step="0.125">
+                </div>
+                
+                <button onclick="calculateSegmented()" class="calc-button">Calculate</button>
+                
+                <div id="segmented-result" class="result"></div>
+            </div>
+
+            <!-- Triangle Calculator -->
+            <div id="triangle-calc" class="calc-content">
+                <h2>Right Triangle Calculator</h2>
+                <p class="calc-description">Enter any two values to solve the triangle</p>
+                
+                <div class="input-group">
+                    <label for="tri-side-a">Side A (adjacent):</label>
+                    <input type="number" id="tri-side-a" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tri-side-b">Side B (opposite):</label>
+                    <input type="number" id="tri-side-b" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tri-side-c">Side C (hypotenuse):</label>
+                    <input type="number" id="tri-side-c" step="0.125">
+                </div>
+                
+                <div class="input-group">
+                    <label for="tri-angle-a">Angle A (degrees):</label>
+                    <input type="number" id="tri-angle-a" step="0.1">
+                </div>
+                
+                <button onclick="calculateTriangle()" class="calc-button">Calculate</button>
+                
+                <div id="triangle-result" class="result"></div>
+            </div>
+
+            <!-- Rafter Calculator -->
+            <div id="rafter-calc" class="calc-content">
+                <h2>Roof Rafter Calculator</h2>
+                <p class="calc-description">Calculate rafter length and angles for roof framing</p>
+                
+                <div class="input-group">
+                    <label for="rafter-run">Run (horizontal distance, feet):</label>
+                    <input type="number" id="rafter-run" value="12" step="0.25">
+                </div>
+                
+                <div class="input-group">
+                    <label for="rafter-pitch">Roof Pitch (rise per 12" run):</label>
+                    <input type="number" id="rafter-pitch" value="6" step="0.25">
+                </div>
+                
+                <div class="input-group">
+                    <label for="rafter-overhang">Overhang (inches):</label>
+                    <input type="number" id="rafter-overhang" value="12" step="0.25">
+                </div>
+                
+                <button onclick="calculateRafter()" class="calc-button">Calculate</button>
+                
+                <div id="rafter-result" class="result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <section id="resources" class="resources-section">
+        <h2>Free Woodworking Resources</h2>
+        <div class="resource-grid">
+            <a href="wood-species-guide.html" class="resource-card" style="text-decoration: none; color: inherit; display: block;">
+                <h3>📋 Wood Species Guide</h3>
+                <p>Properties, uses, and characteristics of common wood species</p>
+            </a>
+            <a href="joints-guide.html" class="resource-card" style="text-decoration: none; color: inherit; display: block;">
+                <h3>🔨 Joint Types Reference</h3>
+                <p>Illustrated guide to woodworking joints and when to use them</p>
+            </a>
+            <a href="beginners-guide.html" class="resource-card" style="text-decoration: none; color: inherit; display: block;">
+                <h3>📐 Beginner's How-To Guide</h3>
+                <p>Essential tools, techniques, and first projects to get started</p>
+            </a>
+            <div class="resource-card">
+                <h3>🪛 Tool Maintenance</h3>
+                <p>Keep your tools sharp and working perfectly</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="color: #666;">Click any guide above for detailed tutorials and information</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Woodworking Pro</h2>
+        <p>Free, accurate woodworking calculators and resources for DIY enthusiasts and professional woodworkers. No sign-up required, no ads, just tools that work.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Woodworking Pro - Free Woodworking Tools & Resources</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- PWA Installation Script -->
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered:', registration);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed:', err);
+                    });
+            });
+        }
+
+        // PWA Install prompt
+        let deferredPrompt;
+        const installButton = document.createElement('button');
+        installButton.className = 'install-button';
+        installButton.innerHTML = '📱 Install App';
+        installButton.style.display = 'none';
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installButton.style.display = 'block';
+            document.body.appendChild(installButton);
+        });
+
+        installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response: ${outcome}`);
+                deferredPrompt = null;
+                installButton.style.display = 'none';
+            }
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA installed successfully');
+            installButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
