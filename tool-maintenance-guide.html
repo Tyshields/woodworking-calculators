@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Maintenance Guide - Woodworking Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .resource-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .guide-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        
+        .guide-section h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .tool-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #8b4513;
+        }
+        
+        .tool-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        
+        .frequency-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .daily { background: #e3f2fd; color: #1976d2; }
+        .weekly { background: #e8f5e9; color: #388e3c; }
+        .monthly { background: #fff3e0; color: #f57c00; }
+        .yearly { background: #fce4ec; color: #c2185b; }
+        .as-needed { background: #f3e5f5; color: #7b1fa2; }
+        
+        .maintenance-steps {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .maintenance-steps h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+            padding-left: 3rem;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2196f3;
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #f44336;
+        }
+        
+        .warning-box strong {
+            color: #d32f2f;
+        }
+        
+        .tip-box {
+            background: #fff8dc;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .tip-box strong {
+            color: #8b4513;
+        }
+        
+        .info-box {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .supplies-list {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .supplies-list h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .supplies-list ul {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .schedule-table th {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #34495e;
+        }
+        
+        .symptom-box {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .symptom-box strong {
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🪚 Woodworking Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-page">
+        <a href="index.html#resources" class="back-button">← Back to Resources</a>
+        
+        <div class="resource-header">
+            <h1>🔧 Tool Maintenance Guide</h1>
+            <p>Keep your tools sharp, safe, and working perfectly for years to come</p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="guide-section">
+            <h2>Why Tool Maintenance Matters</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                Well-maintained tools are safer, perform better, and last longer. A dull saw blade is more dangerous than a sharp one, and rusty tools can ruin your projects. Regular maintenance takes just a few minutes but saves hours of frustration and hundreds of dollars in replacements.
+            </p>
+            
+            <div class="info-box">
+                <strong>The Golden Rule:</strong> Clean your tools after every use, sharpen regularly, and store properly. These three habits will keep your tools in top condition.
+            </div>
+        </div>
+
+        <!-- Hand Tools -->
+        <div class="guide-section">
+            <h2>🔨 Hand Tool Maintenance</h2>
+            
+            <!-- Chisels -->
+            <div class="tool-card">
+                <h3>Chisels</h3>
+                <span class="frequency-badge as-needed">SHARPEN AS NEEDED</span>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Sharpening Process:</h4>
+                    <ol class="step-list">
+                        <li>Flatten the back on a 1000-grit stone (only need to do once)</li>
+                        <li>Sharpen bevel at 25-30° on 1000-grit stone (10-15 strokes)</li>
+                        <li>Polish on 6000-8000 grit stone (5-10 strokes)</li>
+                        <li>Remove burr by flattening back on fine stone</li>
+                        <li>Test on scrap wood - should cut like butter</li>
+                    </ol>
+                </div>
+                
+                <div class="symptom-box">
+                    <strong>Needs Sharpening When:</strong> Requires pressure to cut, leaves fuzzy edges, or slides off wood instead of cutting
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Cleaning & Storage:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Wipe clean after every use</li>
+                        <li>Remove sap/resin with mineral spirits</li>
+                        <li>Apply light coat of oil before storage</li>
+                        <li>Store in chisel roll or with blade guards</li>
+                        <li>Never store loose in drawer (damages edge)</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Safety Warning:</strong> Always sharpen away from your body. A chisel that slips can cause serious injury.
+                </div>
+            </div>
+
+            <!-- Hand Saws -->
+            <div class="tool-card">
+                <h3>Hand Saws</h3>
+                <span class="frequency-badge as-needed">SHARPEN EVERY 6-12 MONTHS</span>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Cleaning:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Wipe blade with clean cloth after use</li>
+                        <li>Remove pitch/sap with mineral spirits or resin remover</li>
+                        <li>Dry completely before storage</li>
+                        <li>Apply thin coat of paste wax or oil</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Sharpening (Professional Recommended):</h4>
+                    <p style="margin-left: 1rem; color: #666;">
+                        Hand saw sharpening requires specialized files and techniques. For most woodworkers, sending saws to a professional sharpener ($15-25) is the best option. However, if you want to learn:
+                    </p>
+                    <ol class="step-list">
+                        <li>Secure saw in vise at comfortable height</li>
+                        <li>Use proper saw file for tooth size</li>
+                        <li>File each tooth at correct angle (60° for crosscut, 90° for rip)</li>
+                        <li>Maintain consistent pressure and strokes</li>
+                        <li>Set teeth after sharpening (specialized tool needed)</li>
+                    </ol>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Pro Tip:</strong> Modern hardpoint saws can't be sharpened but cost $15-30 and last years. Good option for beginners.
+                </div>
+            </div>
+
+            <!-- Hand Planes -->
+            <div class="tool-card">
+                <h3>Hand Planes</h3>
+                <span class="frequency-badge weekly">SHARPEN BLADE WEEKLY</span>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Remove shavings from throat and body</li>
+                        <li>Wipe down sole with dry cloth</li>
+                        <li>Retract blade when not in use</li>
+                        <li>Store on side, never on sole</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Blade Sharpening:</h4>
+                    <ol class="step-list">
+                        <li>Remove blade from plane</li>
+                        <li>Flatten back on 1000-grit stone</li>
+                        <li>Sharpen bevel at 25° (primary) and 30° (micro-bevel)</li>
+                        <li>Polish on 6000-8000 grit</li>
+                        <li>Reinstall blade, adjust for thin shaving</li>
+                    </ol>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Seasonal Deep Clean:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Disassemble completely</li>
+                        <li>Clean all parts with mineral spirits</li>
+                        <li>Remove rust with fine steel wool and oil</li>
+                        <li>Flatten sole if needed (sandpaper on flat surface)</li>
+                        <li>Apply paste wax to sole</li>
+                        <li>Oil moving parts lightly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Measuring Tools -->
+            <div class="tool-card">
+                <h3>Measuring & Marking Tools</h3>
+                <span class="frequency-badge monthly">CHECK ACCURACY MONTHLY</span>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Squares (Combination, Try, Speed):</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Wipe clean after use</li>
+                        <li>Check accuracy against known square surface</li>
+                        <li>If out of square, carefully file the heel</li>
+                        <li>Apply light oil to prevent rust</li>
+                        <li>Never use as hammer or pry bar</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Tape Measures:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Wipe blade clean before retracting</li>
+                        <li>Check that hook is secure (moves 1/16" for accuracy)</li>
+                        <li>Oil spring mechanism if sticky</li>
+                        <li>Replace if blade is kinked or won't retract smoothly</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Accuracy Check:</strong> Place square in corner, draw line, flip square over and draw line again. Lines should overlap perfectly. If gap appears, square is out of true.
+                </div>
+            </div>
+        </div>
+
+        <!-- Power Tools -->
+        <div class="guide-section">
+            <h2>⚡ Power Tool Maintenance</h2>
+            
+            <!-- Circular Saw -->
+            <div class="tool-card">
+                <h3>Circular Saw</h3>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                <span class="frequency-badge as-needed">CHANGE BLADE WHEN DULL</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Blow out sawdust with compressed air</li>
+                        <li>Check blade for damage or excessive wear</li>
+                        <li>Wipe down housing</li>
+                        <li>Check power cord for damage</li>
+                        <li>Ensure blade guard operates freely</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Blade Maintenance:</h4>
+                    <ol class="step-list">
+                        <li>Remove blade when showing signs of dullness</li>
+                        <li>Clean with oven cleaner or blade cleaner (removes pitch)</li>
+                        <li>Inspect for missing or damaged teeth</li>
+                        <li>Sharpen professionally ($10-15) or replace ($15-50)</li>
+                        <li>Carbide-tipped blades: replace when dull (can't sharpen at home)</li>
+                    </ol>
+                </div>
+                
+                <div class="symptom-box">
+                    <strong>Blade Needs Replacement When:</strong> Burns wood, requires excessive pressure, makes rough cuts, or produces excessive smoke
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Safety First:</strong> Always unplug before changing blades or performing maintenance. Never bypass or remove safety guards.
+                </div>
+            </div>
+
+            <!-- Miter Saw -->
+            <div class="tool-card">
+                <h3>Miter Saw</h3>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                <span class="frequency-badge monthly">DEEP CLEAN MONTHLY</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Vacuum or blow out sawdust from base and fence</li>
+                        <li>Wipe down table surface</li>
+                        <li>Check blade for pitch buildup</li>
+                        <li>Ensure bevel/miter locks engage properly</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Monthly Deep Clean:</h4>
+                    <ol class="step-list">
+                        <li>Remove blade and clean thoroughly</li>
+                        <li>Clean sliding rails with degreaser</li>
+                        <li>Apply dry lubricant to rails (never oil - attracts dust)</li>
+                        <li>Check and tighten all bolts</li>
+                        <li>Verify fence is square to blade</li>
+                        <li>Check miter and bevel angle accuracy</li>
+                        <li>Clean dust collection port</li>
+                    </ol>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Accuracy Tip:</strong> Check angles quarterly. Cut test pieces at 0°, 45°, and common angles. Adjust stops if needed.
+                </div>
+            </div>
+
+            <!-- Table Saw -->
+            <div class="tool-card">
+                <h3>Table Saw</h3>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                <span class="frequency-badge monthly">DEEP CLEAN & TUNE MONTHLY</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Vacuum out interior cabinet (prevents fires)</li>
+                        <li>Wipe down table with dry cloth</li>
+                        <li>Check blade alignment and tightness</li>
+                        <li>Clean miter slots</li>
+                        <li>Ensure riving knife/splitter is in place</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Monthly Tune-Up:</h4>
+                    <ol class="step-list">
+                        <li>Check blade is parallel to miter slots (critical for safety)</li>
+                        <li>Verify fence is parallel to blade</li>
+                        <li>Clean and wax table surface</li>
+                        <li>Lubricate elevation and tilt mechanisms</li>
+                        <li>Check drive belt tension</li>
+                        <li>Inspect arbor for play or damage</li>
+                        <li>Clean and sharpen/replace blade</li>
+                    </ol>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Critical Safety:</strong> A blade not parallel to miter slots causes kickback. Check this monthly! Use dial indicator or specialized jig for accuracy.
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Table Surface Care:</strong> Apply paste wax monthly for smooth feeding. Never use silicone sprays - they contaminate wood.
+                </div>
+            </div>
+
+            <!-- Router -->
+            <div class="tool-card">
+                <h3>Router</h3>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                <span class="frequency-badge as-needed">CHECK COLLET REGULARLY</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Blow out dust from motor and vents</li>
+                        <li>Clean resin from collet and bits</li>
+                        <li>Check power cord and switch</li>
+                        <li>Inspect bits for damage</li>
+                        <li>Wipe down base</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Bit Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Clean with resin remover after use</li>
+                        <li>Apply light oil to prevent rust</li>
+                        <li>Store in protective case or rack</li>
+                        <li>Never force dull bits - sharpen or replace</li>
+                        <li>Carbide bits: professional sharpening recommended</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Collet Care:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Clean collet regularly (prevents slippage)</li>
+                        <li>Check for wear or cracks</li>
+                        <li>Replace if bits slip or won't release easily</li>
+                        <li>Use correct collet size for each bit</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Danger:</strong> A bit that slips during operation can be deadly. Always ensure collet is clean and tight.
+                </div>
+            </div>
+
+            <!-- Drill/Driver -->
+            <div class="tool-card">
+                <h3>Drill/Driver (Cordless)</h3>
+                <span class="frequency-badge daily">CLEAN AFTER USE</span>
+                <span class="frequency-badge monthly">CHECK CHUCK</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Wipe down exterior</li>
+                        <li>Blow out dust from vents</li>
+                        <li>Check chuck tightness</li>
+                        <li>Inspect battery contacts</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Battery Care (Critical for Longevity):</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Store batteries at 40-80% charge (not full, not empty)</li>
+                        <li>Keep batteries at room temperature</li>
+                        <li>Clean contacts with alcohol on cotton swab</li>
+                        <li>Charge before completely dead</li>
+                        <li>Don't leave on charger for days</li>
+                        <li>Use regularly - batteries degrade when sitting unused</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Chuck Maintenance:</h4>
+                    <ol class="step-list">
+                        <li>Remove chuck every few months</li>
+                        <li>Clean threads thoroughly</li>
+                        <li>Apply light grease to threads</li>
+                        <li>Reinstall and tighten properly</li>
+                    </ol>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Battery Tip:</strong> Lithium-ion batteries last 2-3 years with proper care. Store extras at 50% charge in cool, dry place.
+                </div>
+            </div>
+
+            <!-- Sanders -->
+            <div class="tool-card">
+                <h3>Sanders (Orbital, Belt, Detail)</h3>
+                <span class="frequency-badge daily">EMPTY DUST BAG DAILY</span>
+                <span class="frequency-badge weekly">CLEAN THOROUGHLY</span>
+                
+                <div class="maintenance-steps">
+                    <h4>Daily Maintenance:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Empty dust bag/canister before full</li>
+                        <li>Tap filter to remove dust</li>
+                        <li>Check pad/belt for wear</li>
+                        <li>Wipe down housing</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Weekly Deep Clean:</h4>
+                    <ol class="step-list">
+                        <li>Remove and wash dust filter (if washable)</li>
+                        <li>Blow out all dust from motor housing</li>
+                        <li>Check pad/platen for flatness</li>
+                        <li>Inspect power cord and switch</li>
+                        <li>Test that pad/belt doesn't slip</li>
+                    </ol>
+                </div>
+                
+                <div class="maintenance-steps">
+                    <h4>Sandpaper Storage:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li>Store flat, not rolled</li>
+                        <li>Keep in sealed container (humidity affects adhesive)</li>
+                        <li>Replace when clogged or worn</li>
+                        <li>Clean clogged paper with rubber cleaning stick</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Health Warning:</strong> Always use dust collection. Wood dust is a carcinogen. Never blow dust with compressed air without respirator.
+                </div>
+            </div>
+        </div>
+
+        <!-- Maintenance Supplies -->
+        <div class="guide-section">
+            <h2>🧰 Essential Maintenance Supplies</h2>
+            
+            <div class="supplies-list">
+                <h4>Must-Have Supplies ($50-100 total):</h4>
+                <ul>
+                    <li><strong>Sharpening stones</strong> - 1000 and 6000 grit combo stone ($30-40)</li>
+                    <li><strong>Honing guide</strong> - Keeps consistent angle ($15-20)</li>
+                    <li><strong>3-in-1 oil or camellia oil</strong> - Rust prevention ($5)</li>
+                    <li><strong>Paste wax</strong> - For cast iron surfaces ($8)</li>
+                    <li><strong>Mineral spirits</strong> - General cleaner ($5)</li>
+                    <li><strong>Blade/bit cleaner</strong> - Removes pitch ($8)</li>
+                    <li><strong>Compressed air or shop vacuum</strong> - Dust removal</li>
+                    <li><strong>Clean rags</strong> - Cotton t-shirts work great</li>
+                    <li><strong>Small brushes</strong> - For tight spaces ($5)</li>
+                    <li><strong>Steel wool (0000)</strong> - Fine rust removal ($3)</li>
+                </ul>
+            </div>
+            
+            <div class="supplies-list">
+                <h4>Nice-to-Have Supplies:</h4>
+                <ul>
+                    <li><strong>Dial indicator</strong> - For precise table saw alignment ($25-40)</li>
+                    <li><strong>Combination square set</strong> - Check tool accuracy ($30-60)</li>
+                    <li><strong>Rust remover</strong> - Evap-O-Rust or similar ($15)</li>
+                    <li><strong>Bearing grease</strong> - For power tool maintenance ($8)</li>
+                    <li><strong>Contact cleaner spray</strong> - For switches ($6)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Maintenance Schedule -->
+        <div class="guide-section">
+            <h2>📅 Maintenance Schedule</h2>
+            
+            <h3>Daily (After Each Use)</h3>
+            <table class="schedule-table">
+                <tr>
+                    <th>Tool</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>All tools</td>
+                    <td>Wipe clean, remove sawdust</td>
+                    <td>1-2 min</td>
+                </tr>
+                <tr>
+                    <td>Power tools</td>
+                    <td>Blow out dust, check cords</td>
+                    <td>2-3 min</td>
+                </tr>
+                <tr>
+                    <td>Hand tools</td>
+                    <td>Clean, oil if needed</td>
+                    <td>1-2 min</td>
+                </tr>
+                <tr>
+                    <td>Blades/bits</td>
+                    <td>Remove pitch, inspect</td>
+                    <td>2-3 min</td>
+                </tr>
+            </table>
+            
+            <h3>Weekly (If Used Regularly)</h3>
+            <table class="schedule-table">
+                <tr>
+                    <th>Tool</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>Chisels/plane blades</td>
+                    <td>Sharpen</td>
+                    <td>5-10 min each</td>
+                </tr>
+                <tr>
+                    <td>Sanders</td>
+                    <td>Deep clean, wash filter</td>
+                    <td>5 min</td>
+                </tr>
+                <tr>
+                    <td>Table saw</td>
+                    <td>Wax surface</td>
+                    <td>5 min</td>
+                </tr>
+            </table>
+            
+            <h3>Monthly</h3>
+            <table class="schedule-table">
+                <tr>
+                    <th>Tool</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>Table saw</td>
+                    <td>Full tune-up and alignment check</td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Miter saw</td>
+                    <td>Deep clean, accuracy check</td>
+                    <td>20 min</td>
+                </tr>
+                <tr>
+                    <td>All power tools</td>
+                    <td>Inspect for wear, lubricate</td>
+                    <td>10 min each</td>
+                </tr>
+                <tr>
+                    <td>Measuring tools</td>
+                    <td>Accuracy check</td>
+                    <td>5 min</td>
+                </tr>
+            </table>
+            
+            <h3>Yearly</h3>
+            <table class="schedule-table">
+                <tr>
+                    <th>Tool</th>
+                    <th>Task</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>All power tools</td>
+                    <td>Complete disassembly, deep clean, re-lubricate</td>
+                    <td>1-2 hours each</td>
+                </tr>
+                <tr>
+                    <td>Hand planes</td>
+                    <td>Full disassembly, rust removal, sole flattening</td>
+                    <td>1 hour</td>
+                </tr>
+                <tr>
+                    <td>Hand saws</td>
+                    <td>Professional sharpening</td>
+                    <td>Drop off</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Rust Prevention -->
+        <div class="guide-section">
+            <h2>🛡️ Rust Prevention & Removal</h2>
+            
+            <h3>Prevention (Best Strategy)</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Control humidity</strong> - Keep shop below 50% humidity if possible</li>
+                <li><strong>Apply protectant</strong> - Paste wax on cast iron, oil on steel</li>
+                <li><strong>Use regularly</strong> - Tools in use don't rust</li>
+                <li><strong>Avoid bare hands</strong> - Skin oils cause rust on cast iron</li>
+                <li><strong>Store properly</strong> - Toolbox or cabinet, not on concrete floor</li>
+            </ul>
+            
+            <h3>Surface Rust Removal</h3>
+            <ol class="step-list">
+                <li>Spray with WD-40 or apply mineral oil</li>
+                <li>Scrub with 0000 steel wool</li>
+                <li>Wipe clean with cloth</li>
+                <li>Apply paste wax or oil for protection</li>
+                <li>Buff with clean cloth</li>
+            </ol>
+            
+            <h3>Heavy Rust Removal</h3>
+            <ol class="step-list">
+                <li>Soak in Evap-O-Rust or vinegar (24 hours)</li>
+                <li>Scrub with brass brush or steel wool</li>
+                <li>For pitted rust: use fine sandpaper progressively (220→400→600)</li>
+                <li>Clean thoroughly with mineral spirits</li>
+                <li>Dry completely</li>
+                <li>Apply rust preventative immediately</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>Climate Tip:</strong> In humid climates, add desiccant packets to toolboxes and use VCI (vapor corrosion inhibitor) paper for long-term storage.
+            </div>
+        </div>
+
+        <!-- Storage -->
+        <div class="guide-section">
+            <h2>📦 Proper Storage</h2>
+            
+            <h3>Hand Tools</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Chisels</strong> - Blade guards or chisel roll; never loose in drawer</li>
+                <li><strong>Saws</strong> - Hang on wall or store in protective sleeve</li>
+                <li><strong>Planes</strong> - Store on side with blade retracted</li>
+                <li><strong>Measuring tools</strong> - Clean, dry toolbox; avoid concrete contact</li>
+                <li><strong>Clamps</strong> - Hang on wall or rack; never stacked (damages threads)</li>
+            </ul>
+            
+            <h3>Power Tools</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Portable tools</strong> - In cases or on shelves; off the floor</li>
+                <li><strong>Stationary tools</strong> - Cover when not in use (prevents dust)</li>
+                <li><strong>Batteries</strong> - Room temperature, 40-80% charge</li>
+                <li><strong>Blades/bits</strong> - In cases or blade guards; organized system</li>
+            </ul>
+            
+            <h3>Consumables</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Sandpaper</strong> - Sealed container; flat storage</li>
+                <li><strong>Glue</strong> - Cool, dry place; check expiration dates</li>
+                <li><strong>Finishes</strong> - Sealed tight; away from heat</li>
+                <li><strong>Blades/bits</strong> - In cases or wall-mounted rack</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>The Best Storage:</strong> Tools you use frequently should be easily accessible. Tools used occasionally can go in cabinets. Rarely-used tools get long-term storage with extra rust protection.
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="guide-section">
+            <h2>🔍 Troubleshooting Common Issues</h2>
+            
+            <div class="tool-card">
+                <h3>Power Tool Won't Start</h3>
+                <ol style="margin-left: 2rem; line-height: 2;">
+                    <li>Check power source (outlet, breaker, GFI)</li>
+                    <li>Inspect power cord for damage</li>
+                    <li>Check on/off switch</li>
+                    <li>For cordless: check battery charge and contacts</li>
+                    <li>If motor hums but won't spin: likely jammed or capacitor failed</li>
+                </ol>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Saw Blade Burns Wood</h3>
+                <ol style="margin-left: 2rem; line-height: 2;">
+                    <li>Blade is dull - sharpen or replace</li>
+                    <li>Feeding too slowly - maintain steady feed rate</li>
+                    <li>Blade is dirty - clean pitch buildup</li>
+                    <li>Wrong blade for material - use appropriate TPI</li>
+                    <li>Blade not parallel to fence (table saw) - realign</li>
+                </ol>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Drill Bit Slips in Chuck</h3>
+                <ol style="margin-left: 2rem; line-height: 2;">
+                    <li>Chuck is dirty - clean and oil</li>
+                    <li>Not tightened enough - use chuck key firmly</li>
+                    <li>Bit shank is damaged - replace bit</li>
+                    <li>Chuck is worn - replace chuck</li>
+                </ol>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Hand Plane Chatters or Won't Cut</h3>
+                <ol style="margin-left: 2rem; line-height: 2;">
+                    <li>Blade is dull - sharpen immediately</li>
+                    <li>Blade not secured tightly - tighten cap iron</li>
+                    <li>Taking too thick of shaving - adjust for thinner cut</li>
+                    <li>Planing against the grain - reverse direction</li>
+                    <li>Mouth opening too wide - adjust frog position</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Final Tips -->
+        <div class="guide-section">
+            <h2>💡 Final Maintenance Tips</h2>
+            
+            <div class="info-box">
+                <strong>Start a Maintenance Log:</strong> Keep a simple notebook recording when you sharpen, service, or replace parts. This helps you stay on schedule and spot patterns (like blades dulling faster than they should).
+            </div>
+            
+            <div class="tip-box">
+                <strong>The 5-Minute Rule:</strong> Spend 5 minutes at the end of each shop session cleaning and maintaining. This prevents big maintenance sessions and keeps tools ready to go.
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ When to Replace vs. Repair:</strong> If repair costs more than 50% of replacement cost, or if the tool is unreliable/unsafe, replace it. Your safety is worth more than any tool.
+            </div>
+            
+            <h3>Signs It's Time for Professional Service</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li>Motor smells like burning or makes unusual noises</li>
+                <li>Arbor has play or wobble (table saw, miter saw)</li>
+                <li>Power switch is intermittent or sparks</li>
+                <li>Bearings are loud or rough</li>
+                <li>Tool trips breaker repeatedly</li>
+                <li>Alignment can't be corrected</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>Remember:</strong> Well-maintained tools are safer, produce better results, and last decades. The small investment in maintenance saves thousands in replacements and produces better projects!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Woodworking Pro - Free Woodworking Tools & Resources</p>
+    </footer>
+</body>
+</html>
