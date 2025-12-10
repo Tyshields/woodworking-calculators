@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .test-nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown .dropbtn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            min-width: 240px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #f39c12;
+            color: white;
+            padding-left: 25px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #f39c12;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        .instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 2rem;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-bottom: 2rem;">Dropdown Menu Test</h1>
+
+    <nav class="test-nav">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Calculators</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Guides ▾</a>
+                <div class="dropdown-content">
+                    <a href="#">📋 Wood Species</a>
+                    <a href="#">🔨 Joints Reference</a>
+                    <a href="#">📐 Beginner's Guide</a>
+                    <a href="#">🪛 Tool Maintenance</a>
+                </div>
+            </li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="instructions">
+        <h2>✅ Testing Instructions:</h2>
+        <ul>
+            <li><strong>Desktop:</strong> Hover your mouse over "Guides ▾" - dropdown should appear</li>
+            <li><strong>Mobile:</strong> Tap/click on "Guides ▾" - dropdown should toggle</li>
+            <li><strong>Expected behavior:</strong> A white dropdown menu appears with 4 guide links</li>
+            <li><strong>Hover effect:</strong> Links turn orange with slight indent when you hover</li>
+        </ul>
+    </div>
+
+    <div class="instructions" style="background: #fff3cd; border-left-color: #ffc107; margin-top: 1rem;">
+        <h2>🔍 If Dropdown Doesn't Work:</h2>
+        <ul>
+            <li>Check browser console (F12) for errors</li>
+            <li>Make sure you uploaded <strong>both</strong> index.html AND styles.css</li>
+            <li>Clear browser cache (Ctrl+Shift+Delete)</li>
+            <li>Try in a different browser</li>
+            <li>If on GitHub Pages, wait 2-3 minutes after upload</li>
+        </ul>
+    </div>
+
+    <script>
+        // Handle dropdown on mobile/touch devices
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            const dropbtn = dropdown ? dropdown.querySelector('.dropbtn') : null;
+            
+            if (dropdown && dropbtn) {
+                // Toggle dropdown on click for mobile
+                dropbtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                    console.log('Dropdown toggled. Active:', dropdown.classList.contains('active'));
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+
+                console.log('Dropdown functionality initialized successfully!');
+            } else {
+                console.error('Dropdown elements not found!');
+            }
+        });
+    </script>
+</body>
+</html>
