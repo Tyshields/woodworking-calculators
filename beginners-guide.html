@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner's Guide - Woodworking Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .resource-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .guide-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        
+        .guide-section h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #8b4513;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .difficulty-beginner {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            position: relative;
+            padding-left: 4rem;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2196f3;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .tool-list, .material-list {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .tool-list h4, .material-list h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-list ul, .material-list ul {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+        
+        .tip-box {
+            background: #fff8dc;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .tip-box strong {
+            color: #8b4513;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #f44336;
+        }
+        
+        .warning-box strong {
+            color: #d32f2f;
+        }
+        
+        .info-box {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #34495e;
+        }
+        
+        .measurement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+        
+        .measurement-table th,
+        .measurement-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .measurement-table th {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .measurement-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🪚 Woodworking Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-page">
+        <a href="index.html#resources" class="back-button">← Back to Resources</a>
+        
+        <div class="resource-header">
+            <h1>🔨 Beginner's Woodworking Guide</h1>
+            <p>Everything you need to start your woodworking journey - tools, techniques, and first projects</p>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="guide-section">
+            <h2>🎯 Getting Started</h2>
+            
+            <h3>Essential Tools for Beginners</h3>
+            <p>You don't need a fully equipped shop to start. Here's what you actually need:</p>
+            
+            <div class="tool-list">
+                <h4>Measuring & Marking ($30-50)</h4>
+                <ul>
+                    <li><strong>Tape measure</strong> - 25ft recommended</li>
+                    <li><strong>Combination square</strong> - For marking 90° and 45° angles</li>
+                    <li><strong>Pencil</strong> - Mechanical pencils work great</li>
+                    <li><strong>Speed square</strong> - Quick angles and marking</li>
+                </ul>
+            </div>
+            
+            <div class="tool-list">
+                <h4>Cutting ($100-200)</h4>
+                <ul>
+                    <li><strong>Circular saw</strong> - Most versatile first power tool</li>
+                    <li><strong>Hand saw</strong> - For detail work and small cuts</li>
+                    <li><strong>Miter saw</strong> (optional but very useful) - For accurate crosscuts</li>
+                </ul>
+            </div>
+            
+            <div class="tool-list">
+                <h4>Shaping & Smoothing ($50-100)</h4>
+                <ul>
+                    <li><strong>Random orbital sander</strong> - Makes finishing easier</li>
+                    <li><strong>Sandpaper</strong> - 80, 120, 220 grit</li>
+                    <li><strong>Chisel set</strong> - Basic 4-piece set</li>
+                    <li><strong>Block plane</strong> (optional) - For smoothing edges</li>
+                </ul>
+            </div>
+            
+            <div class="tool-list">
+                <h4>Assembly ($40-80)</h4>
+                <ul>
+                    <li><strong>Drill/driver combo</strong> - Cordless is best</li>
+                    <li><strong>Clamps</strong> - Start with 4-6 bar clamps</li>
+                    <li><strong>Screwdriver set</strong> - Basic Phillips and flathead</li>
+                    <li><strong>Hammer</strong> - 16oz claw hammer</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <strong>Budget Tip:</strong> Total starter kit can be under $300. Buy at Harbor Freight for budget tools, or upgrade individual tools as you use them more. You don't need expensive tools to make great projects!
+            </div>
+        </div>
+
+        <!-- Safety Section -->
+        <div class="guide-section">
+            <h2>🦺 Safety First</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ Never Skip Safety!</strong> Woodworking can be dangerous. Following these rules will keep you safe and having fun.
+            </div>
+            
+            <h3>Essential Safety Gear</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Safety Glasses</strong> - ALWAYS wear them. No exceptions.</li>
+                <li><strong>Hearing Protection</strong> - Earplugs or earmuffs for power tools</li>
+                <li><strong>Dust Mask/Respirator</strong> - Wood dust is harmful over time</li>
+                <li><strong>Work Gloves</strong> - For handling rough lumber (remove for power tools)</li>
+            </ul>
+            
+            <h3>Golden Safety Rules</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li>🚫 Never remove safety guards from tools</li>
+                <li>🚫 Never reach over or across a running blade</li>
+                <li>🚫 Never wear loose clothing or jewelry around power tools</li>
+                <li>🚫 Never use dull blades (they're more dangerous than sharp ones)</li>
+                <li>✅ Always unplug tools when changing blades</li>
+                <li>✅ Always secure your workpiece before cutting</li>
+                <li>✅ Always keep your work area clean and organized</li>
+                <li>✅ Always know where the power switch is before starting</li>
+            </ul>
+        </div>
+
+        <!-- Measurement Conversion -->
+        <div class="guide-section">
+            <h2>📏 Measurement Quick Reference</h2>
+            
+            <h3>Fraction to Decimal Conversion</h3>
+            <table class="measurement-table">
+                <thead>
+                    <tr>
+                        <th>Fraction</th>
+                        <th>Decimal</th>
+                        <th>Fraction</th>
+                        <th>Decimal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1/16"</td>
+                        <td>0.0625"</td>
+                        <td>9/16"</td>
+                        <td>0.5625"</td>
+                    </tr>
+                    <tr>
+                        <td>1/8"</td>
+                        <td>0.125"</td>
+                        <td>5/8"</td>
+                        <td>0.625"</td>
+                    </tr>
+                    <tr>
+                        <td>3/16"</td>
+                        <td>0.1875"</td>
+                        <td>11/16"</td>
+                        <td>0.6875"</td>
+                    </tr>
+                    <tr>
+                        <td>1/4"</td>
+                        <td>0.25"</td>
+                        <td>3/4"</td>
+                        <td>0.75"</td>
+                    </tr>
+                    <tr>
+                        <td>5/16"</td>
+                        <td>0.3125"</td>
+                        <td>13/16"</td>
+                        <td>0.8125"</td>
+                    </tr>
+                    <tr>
+                        <td>3/8"</td>
+                        <td>0.375"</td>
+                        <td>7/8"</td>
+                        <td>0.875"</td>
+                    </tr>
+                    <tr>
+                        <td>7/16"</td>
+                        <td>0.4375"</td>
+                        <td>15/16"</td>
+                        <td>0.9375"</td>
+                    </tr>
+                    <tr>
+                        <td>1/2"</td>
+                        <td>0.5"</td>
+                        <td>1"</td>
+                        <td>1.0"</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="tip-box">
+                <strong>Pro Tip:</strong> Memorize the common ones: 1/8 = 0.125, 1/4 = 0.25, 1/2 = 0.5, 3/4 = 0.75
+            </div>
+        </div>
+
+        <!-- First Project: Simple Shelf -->
+        <div class="guide-section">
+            <h2>🔨 Project #1: Simple Wall Shelf</h2>
+            
+            <div class="project-card">
+                <span class="difficulty-badge difficulty-beginner">BEGINNER FRIENDLY</span>
+                <h3>Floating Wall Shelf</h3>
+                <p><strong>Time:</strong> 2-3 hours | <strong>Cost:</strong> $15-25 | <strong>Difficulty:</strong> Easy</p>
+            </div>
+            
+            <div class="material-list">
+                <h4>Materials Needed</h4>
+                <ul>
+                    <li>1x8 pine board, 4 feet long (shelf)</li>
+                    <li>1x2 pine board, 4 feet long (cleats)</li>
+                    <li>Wood screws (1.25" and 2.5")</li>
+                    <li>Wood glue</li>
+                    <li>Sandpaper (120 and 220 grit)</li>
+                    <li>Finish (stain or paint)</li>
+                </ul>
+            </div>
+            
+            <div class="tool-list">
+                <h4>Tools Needed</h4>
+                <ul>
+                    <li>Circular saw or miter saw</li>
+                    <li>Drill/driver</li>
+                    <li>Tape measure</li>
+                    <li>Pencil</li>
+                    <li>Level</li>
+                    <li>Safety glasses</li>
+                </ul>
+            </div>
+            
+            <h3>Step-by-Step Instructions</h3>
+            <ol class="step-list">
+                <li>
+                    <strong>Cut the pieces</strong><br>
+                    Cut the 1x8 board to 36" for the shelf. Cut two pieces of 1x2 at 34" for the cleats (mounting strips).
+                </li>
+                <li>
+                    <strong>Sand everything</strong><br>
+                    Sand all pieces smooth, starting with 120-grit and finishing with 220-grit. Sand with the grain, not against it.
+                </li>
+                <li>
+                    <strong>Attach the cleats</strong><br>
+                    Apply wood glue to one cleat and position it flush with the back edge of the shelf, centered with 1" gap on each end. Secure with 1.25" screws every 6".
+                </li>
+                <li>
+                    <strong>Add second cleat</strong><br>
+                    Glue and screw the second cleat directly below the first for extra strength. Let glue dry for 1 hour.
+                </li>
+                <li>
+                    <strong>Apply finish</strong><br>
+                    Stain or paint as desired. Let dry completely (follow product instructions).
+                </li>
+                <li>
+                    <strong>Find wall studs</strong><br>
+                    Use a stud finder to locate studs in your wall. Mark them with pencil.
+                </li>
+                <li>
+                    <strong>Mount the shelf</strong><br>
+                    Hold the shelf level against the wall. Drill pilot holes through the cleats into the studs. Drive 2.5" screws through the cleats into the studs.
+                </li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>Success Tip:</strong> Always drill pilot holes before driving screws into hardwood or near board ends to prevent splitting!
+            </div>
+        </div>
+
+        <!-- Project 2: Tool Box -->
+        <div class="guide-section">
+            <h2>🧰 Project #2: Simple Tool Box</h2>
+            
+            <div class="project-card">
+                <span class="difficulty-badge difficulty-beginner">BEGINNER FRIENDLY</span>
+                <h3>Classic Carpenter's Tool Box</h3>
+                <p><strong>Time:</strong> 3-4 hours | <strong>Cost:</strong> $20-30 | <strong>Difficulty:</strong> Easy</p>
+            </div>
+            
+            <div class="material-list">
+                <h4>Materials Needed</h4>
+                <ul>
+                    <li>1x8 pine board, 8 feet (sides and bottom)</li>
+                    <li>1x6 pine board, 2 feet (ends)</li>
+                    <li>3/4" dowel, 18" (handle)</li>
+                    <li>Wood screws (1.25")</li>
+                    <li>Wood glue</li>
+                    <li>Sandpaper</li>
+                </ul>
+            </div>
+            
+            <h3>Dimensions</h3>
+            <ul style="margin-left: 2rem; line-height: 2;">
+                <li><strong>Bottom:</strong> 24" x 7.25" (1x8 board)</li>
+                <li><strong>Sides:</strong> Two pieces 24" x 7.25"</li>
+                <li><strong>Ends:</strong> Two pieces 9" x 5.5" (1x6 board)</li>
+                <li><strong>Handle:</strong> 18" dowel</li>
+            </ul>
+            
+            <h3>Step-by-Step Instructions</h3>
+            <ol class="step-list">
+                <li>
+                    <strong>Cut all pieces</strong><br>
+                    Cut the bottom (24"), two sides (24" each), and two ends (9" each). Sand all pieces smooth.
+                </li>
+                <li>
+                    <strong>Mark the ends</strong><br>
+                    On each end piece, measure 2.5" from the top center and mark for the handle hole. Drill a 3/4" hole at each mark.
+                </li>
+                <li>
+                    <strong>Assemble the box</strong><br>
+                    Apply glue to the bottom edge of one side piece. Attach it to the long edge of the bottom board with screws every 6".
+                </li>
+                <li>
+                    <strong>Add second side</strong><br>
+                    Flip the assembly and attach the second side piece the same way.
+                </li>
+                <li>
+                    <strong>Attach the ends</strong><br>
+                    Apply glue to the edges of one end piece. Position it flush with the box ends and secure with screws. Repeat for the other end.
+                </li>
+                <li>
+                    <strong>Install handle</strong><br>
+                    Apply glue inside the handle holes. Insert the dowel through both end pieces. Let glue dry overnight.
+                </li>
+                <li>
+                    <strong>Final sanding and finish</strong><br>
+                    Sand any rough edges. Apply your choice of finish or leave natural. You're done!
+                </li>
+            </ol>
+            
+            <div class="info-box">
+                <strong>Variation Ideas:</strong> Add a center divider, create custom compartments, or add small shelves to one end for organizing small parts!
+            </div>
+        </div>
+
+        <!-- Essential Techniques -->
+        <div class="guide-section">
+            <h2>🎓 Essential Techniques</h2>
+            
+            <h3>Measuring & Marking</h3>
+            <div class="tip-box">
+                <strong>Measure twice, cut once</strong> - This old saying exists for a reason! Always double-check measurements before cutting.
+            </div>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li>Always measure from the same reference point</li>
+                <li>Mark your cut line with a sharp pencil or marking knife</li>
+                <li>Use a square to ensure your lines are straight and accurate</li>
+                <li>When marking multiple identical pieces, use the first as a template</li>
+            </ul>
+            
+            <h3>Making Straight Cuts</h3>
+            <ol style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Secure your workpiece</strong> - Clamp it to your work surface</li>
+                <li><strong>Use a guide</strong> - Clamp a straight board as a fence for your saw</li>
+                <li><strong>Let the saw do the work</strong> - Don't force it</li>
+                <li><strong>Support both sides</strong> - Prevent binding and kickback</li>
+            </ol>
+            
+            <h3>Sanding Like a Pro</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Start coarse, finish fine</strong> - 80 → 120 → 220 grit progression</li>
+                <li><strong>Always sand with the grain</strong> - Never across it</li>
+                <li><strong>Don't skip grits</strong> - Each grit removes scratches from the previous</li>
+                <li><strong>Keep it moving</strong> - Don't stay in one spot too long</li>
+                <li><strong>Feel, don't just look</strong> - Run your hand over it to find rough spots</li>
+            </ul>
+            
+            <h3>Applying Glue Correctly</h3>
+            <div class="info-box">
+                <strong>Less is NOT more with wood glue!</strong> You want complete coverage, but excess glue just makes a mess.
+            </div>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li>Apply thin, even coat to both surfaces when possible</li>
+                <li>Spread with finger or scrap wood for even coverage</li>
+                <li>Clamp firmly but don't over-tighten</li>
+                <li>Wipe excess immediately with damp cloth</li>
+                <li>OR wait until completely dry and scrape off with chisel</li>
+                <li>Don't move assembly for at least 30 minutes</li>
+                <li>Full strength after 24 hours</li>
+            </ul>
+        </div>
+
+        <!-- Common Mistakes -->
+        <div class="guide-section">
+            <h2>❌ Common Beginner Mistakes (and How to Avoid Them)</h2>
+            
+            <div class="warning-box">
+                <strong>Mistake #1: Not accounting for saw blade width (kerf)</strong><br>
+                The blade removes about 1/8" of material. If you need a 12" piece, cut on the waste side of your line, not through it.
+            </div>
+            
+            <div class="warning-box">
+                <strong>Mistake #2: Using dull blades</strong><br>
+                Dull blades tear wood, burn it, and are dangerous. Replace or sharpen blades when cuts feel harder or look rough.
+            </div>
+            
+            <div class="warning-box">
+                <strong>Mistake #3: Skipping pilot holes</strong><br>
+                Always drill pilot holes for screws, especially near board ends. It prevents splitting and makes driving easier.
+            </div>
+            
+            <div class="warning-box">
+                <strong>Mistake #4: Not acclimating wood</strong><br>
+                Let lumber sit in your shop for a few days before building. Wood expands/contracts with humidity changes.
+            </div>
+            
+            <div class="warning-box">
+                <strong>Mistake #5: Over-sanding</strong><br>
+                You can't un-sand wood. Stop at 220-grit for most projects. Higher grits are only needed for special finishes.
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="guide-section">
+            <h2>🚀 What's Next?</h2>
+            
+            <h3>After Your First Projects</h3>
+            <p>Once you've built a few simple projects, here's how to level up:</p>
+            
+            <ol style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>Add a table saw</strong> - Game changer for accuracy and speed</li>
+                <li><strong>Learn joinery</strong> - Start with pocket holes, then dados, then mortise & tenon</li>
+                <li><strong>Practice finishing</strong> - A great finish makes average work look professional</li>
+                <li><strong>Build storage</strong> - Make sawhorses, a tool chest, shop shelving</li>
+                <li><strong>Try harder woods</strong> - Graduate from pine to oak or maple</li>
+                <li><strong>Join a community</strong> - Online forums, YouTube channels, local clubs</li>
+            </ol>
+            
+            <h3>Recommended Resources</h3>
+            <ul style="margin-left: 2rem; line-height: 2; margin-top: 1rem;">
+                <li><strong>YouTube Channels:</strong> Steve Ramsey (Woodworking for Mere Mortals), Jay Bates, April Wilkerson</li>
+                <li><strong>Websites:</strong> Ana White (free plans), Wood Magazine, Fine Woodworking</li>
+                <li><strong>Books:</strong> "The Complete Manual of Woodworking" by Albert Jackson</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>Remember:</strong> Every master woodworker started exactly where you are now. Don't compare your beginning to someone else's middle. Just keep building!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Woodworking Pro - Free Woodworking Tools & Resources</p>
+    </footer>
+</body>
+</html>

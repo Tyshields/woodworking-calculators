@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Species Guide - Woodworking Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .resource-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .wood-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .wood-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #8b4513;
+        }
+        
+        .wood-card h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .wood-type {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #8b4513;
+        }
+        
+        .property-list {
+            margin: 1.5rem 0;
+        }
+        
+        .property-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .property-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .property-value {
+            color: #666;
+        }
+        
+        .best-for {
+            background: #fff8dc;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .best-for h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .best-for ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+        
+        .tips-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .tips-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .tip-box {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🪚 Woodworking Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-page">
+        <a href="index.html#resources" class="back-button">← Back to Resources</a>
+        
+        <div class="resource-header">
+            <h1>🌲 Wood Species Guide</h1>
+            <p>Properties, characteristics, and best uses for common woodworking lumber</p>
+        </div>
+
+        <div class="wood-grid">
+            <!-- Oak -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Oak (Red & White)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">1290 (Red) / 1360 (White)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Light to medium brown</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Prominent, open</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Good (pre-drill for nails)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Durability:</span>
+                        <span class="property-value">Excellent (White is rot-resistant)</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Furniture (durable, traditional)</li>
+                        <li>Flooring</li>
+                        <li>Cabinets</li>
+                        <li>Outdoor projects (White Oak)</li>
+                        <li>Trim and molding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Maple -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Maple (Hard & Soft)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">1450 (Hard) / 950 (Soft)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Creamy white to light tan</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Fine, even, sometimes figured</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Good (can burn easily)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Finish:</span>
+                        <span class="property-value">Excellent (takes stain well)</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Cutting boards and butcher blocks</li>
+                        <li>Flooring (extremely durable)</li>
+                        <li>Cabinets and furniture</li>
+                        <li>Musical instruments</li>
+                        <li>Turning projects</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pine -->
+            <div class="wood-card">
+                <span class="wood-type">SOFTWOOD</span>
+                <h2>Pine (White, Yellow, Southern)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">380-690 (varies by type)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Pale yellow to light brown</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Straight with visible knots</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Excellent (easy to cut)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Cost:</span>
+                        <span class="property-value">Budget-friendly</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Beginner projects</li>
+                        <li>Framing and construction</li>
+                        <li>Painted furniture</li>
+                        <li>Shelving</li>
+                        <li>Rustic/farmhouse style</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cherry -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Cherry (Black Cherry)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">995</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Light pink to rich reddish-brown</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Fine, straight, satiny</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Excellent (machines beautifully)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Aging:</span>
+                        <span class="property-value">Darkens beautifully over time</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Fine furniture</li>
+                        <li>Cabinets (premium)</li>
+                        <li>Musical instruments</li>
+                        <li>Turning projects</li>
+                        <li>Heirloom pieces</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Walnut -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Walnut (Black Walnut)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">1010</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Dark chocolate brown</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Straight, sometimes wavy</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Excellent (premium wood)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Cost:</span>
+                        <span class="property-value">High (premium hardwood)</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>High-end furniture</li>
+                        <li>Gunstocks</li>
+                        <li>Cutting boards</li>
+                        <li>Accent pieces</li>
+                        <li>Veneer work</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Poplar -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Poplar (Yellow Poplar)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">540</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Creamy white to greenish</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Straight, uniform</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Excellent (easy to work)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Cost:</span>
+                        <span class="property-value">Affordable hardwood</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Painted projects</li>
+                        <li>Cabinet interiors</li>
+                        <li>Practice projects</li>
+                        <li>Drawer boxes</li>
+                        <li>Trim (painted)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cedar -->
+            <div class="wood-card">
+                <span class="wood-type">SOFTWOOD</span>
+                <h2>Cedar (Western Red Cedar)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">350</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Reddish-brown</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Straight with knots</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Durability:</span>
+                        <span class="property-value">Excellent (rot & insect resistant)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Aroma:</span>
+                        <span class="property-value">Pleasant, distinctive</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Outdoor furniture</li>
+                        <li>Decking</li>
+                        <li>Fencing</li>
+                        <li>Closet lining</li>
+                        <li>Siding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ash -->
+            <div class="wood-card">
+                <span class="wood-type">HARDWOOD</span>
+                <h2>Ash (White Ash)</h2>
+                <div class="property-list">
+                    <div class="property-item">
+                        <span class="property-label">Hardness:</span>
+                        <span class="property-value">1320</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Color:</span>
+                        <span class="property-value">Light brown to nearly white</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Grain:</span>
+                        <span class="property-value">Straight, open, pronounced</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Strength:</span>
+                        <span class="property-value">Excellent (shock resistant)</span>
+                    </div>
+                    <div class="property-item">
+                        <span class="property-label">Workability:</span>
+                        <span class="property-value">Good (machines well)</span>
+                    </div>
+                </div>
+                <div class="best-for">
+                    <h4>Best For:</h4>
+                    <ul>
+                        <li>Tool handles</li>
+                        <li>Baseball bats & sports equipment</li>
+                        <li>Flooring</li>
+                        <li>Furniture frames</li>
+                        <li>Bent wood projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>💡 Wood Selection Tips</h3>
+            
+            <div class="tip-box">
+                <strong>For Beginners:</strong> Start with Pine or Poplar - they're affordable, easy to work with, and forgiving of mistakes.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Outdoor Projects:</strong> Choose Cedar, White Oak, or Teak - they resist rot and insects naturally.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Painted Projects:</strong> Poplar is ideal - smooth surface, takes paint beautifully, and costs less than other hardwoods.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Cutting Boards:</strong> Use Maple, Walnut, or Cherry - they're food-safe, hard, and non-porous.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Fine Furniture:</strong> Cherry, Walnut, or Maple offer beautiful grain and durability for heirloom pieces.
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>📏 Understanding Hardness Ratings</h3>
+            <p><strong>Janka Hardness Scale</strong> measures the force needed to embed a steel ball into wood:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                <li><strong>Under 700:</strong> Soft (dents easily, good for carving)</li>
+                <li><strong>700-1200:</strong> Medium (good all-purpose woods)</li>
+                <li><strong>1200-1500:</strong> Hard (excellent for flooring, furniture)</li>
+                <li><strong>Over 1500:</strong> Very Hard (premium, highly durable)</li>
+            </ul>
+        </div>
+
+        <div class="tips-section">
+            <h3>🌳 Hardwood vs Softwood</h3>
+            <p><strong>Common Misconception:</strong> The terms don't refer to actual hardness!</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                <li><strong>Hardwoods:</strong> Come from deciduous trees (lose leaves in winter) - Oak, Maple, Cherry, Walnut</li>
+                <li><strong>Softwoods:</strong> Come from coniferous trees (evergreens) - Pine, Cedar, Spruce, Fir</li>
+                <li><strong>Fun Fact:</strong> Poplar is technically a hardwood but softer than many softwoods!</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Woodworking Pro - Free Woodworking Tools & Resources</p>
+    </footer>
+</body>
+</html>

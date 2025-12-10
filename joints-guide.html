@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodworking Joints Guide - Woodworking Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .resource-header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .joint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .joint-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #8b4513;
+        }
+        
+        .joint-card h2 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .difficulty.easy { background: #d4edda; color: #155724; }
+        .difficulty.medium { background: #fff3cd; color: #856404; }
+        .difficulty.hard { background: #f8d7da; color: #721c24; }
+        
+        .strength-rating {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .strength-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-right: 1rem;
+        }
+        
+        .strength-bars {
+            display: flex;
+            gap: 0.3rem;
+        }
+        
+        .strength-bar {
+            width: 30px;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 2px;
+        }
+        
+        .strength-bar.filled {
+            background: #4caf50;
+        }
+        
+        .joint-description {
+            color: #666;
+            line-height: 1.8;
+            margin: 1rem 0;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .pros, .cons {
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        .pros {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .cons {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .pros ul, .cons ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+        
+        .pros ul li, .cons ul li {
+            margin: 0.3rem 0;
+        }
+        
+        .best-uses {
+            background: #fff8dc;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .best-uses h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tools-needed {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        
+        .tools-needed h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tips-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .tips-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .tip-box {
+            background: #f0f4f8;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #34495e;
+        }
+        
+        @media (max-width: 768px) {
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🪚 Woodworking Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-page">
+        <a href="index.html#resources" class="back-button">← Back to Resources</a>
+        
+        <div class="resource-header">
+            <h1>🔨 Woodworking Joints Guide</h1>
+            <p>Complete reference for joinery techniques - strength, difficulty, and best uses</p>
+        </div>
+
+        <div class="joint-grid">
+            <!-- Butt Joint -->
+            <div class="joint-card">
+                <h2>Butt Joint</h2>
+                <span class="difficulty easy">BEGINNER</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    The simplest joint where two pieces of wood meet end-to-end or end-to-face. Requires no special cuts, just square ends that meet at 90 degrees.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Easiest to make</li>
+                            <li>No special tools needed</li>
+                            <li>Fast assembly</li>
+                            <li>Good for beginners</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Weakest joint</li>
+                            <li>Requires reinforcement</li>
+                            <li>Limited glue surface</li>
+                            <li>Not great for stress</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Face frames, simple boxes, framing, projects with pocket screws or dowels for reinforcement</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Saw, square, screws/nails, glue</p>
+                </div>
+            </div>
+
+            <!-- Miter Joint -->
+            <div class="joint-card">
+                <h2>Miter Joint</h2>
+                <span class="difficulty easy">BEGINNER</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Two pieces cut at matching angles (typically 45°) that meet to form a corner. Hides end grain for a clean, professional appearance.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Clean, finished look</li>
+                            <li>Hides end grain</li>
+                            <li>Perfect for frames</li>
+                            <li>Professional appearance</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Moderate strength</li>
+                            <li>Can gap if not precise</li>
+                            <li>Needs accurate cuts</li>
+                            <li>Requires clamping</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Picture frames, crown molding, door/window trim, decorative boxes</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Miter saw or miter box, clamps, glue, (optional: splines or biscuits)</p>
+                </div>
+            </div>
+
+            <!-- Dado Joint -->
+            <div class="joint-card">
+                <h2>Dado Joint</h2>
+                <span class="difficulty medium">INTERMEDIATE</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    A flat-bottomed groove cut across the grain of one board to accept the edge of another. Creates a strong mechanical connection with lots of glue surface.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Very strong</li>
+                            <li>Large glue surface</li>
+                            <li>Supports weight well</li>
+                            <li>Self-aligning</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Requires router or dado blade</li>
+                            <li>Must be precise width</li>
+                            <li>Visible from side</li>
+                            <li>Takes more time</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Bookshelves, cabinet shelves, drawer dividers, plywood cabinets</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Router with straight bit, dado blade for table saw, or multiple passes with regular blade</p>
+                </div>
+            </div>
+
+            <!-- Mortise and Tenon -->
+            <div class="joint-card">
+                <h2>Mortise & Tenon</h2>
+                <span class="difficulty hard">ADVANCED</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    The gold standard of woodworking joints. A rectangular projection (tenon) fits into a matching hole (mortise). Used for centuries in fine furniture and timber framing.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Extremely strong</li>
+                            <li>Very durable</li>
+                            <li>Large glue surface</li>
+                            <li>Traditional/quality look</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Time-consuming</li>
+                            <li>Requires precision</li>
+                            <li>Needs special tools</li>
+                            <li>Steep learning curve</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Table legs and aprons, chair frames, door frames, quality furniture construction</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Chisel, drill, router, mortiser (optional), tenon saw or table saw</p>
+                </div>
+            </div>
+
+            <!-- Dovetail Joint -->
+            <div class="joint-card">
+                <h2>Dovetail Joint</h2>
+                <span class="difficulty hard">ADVANCED</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Interlocking trapezoidal "tails" and "pins" that resist being pulled apart. The hallmark of fine craftsmanship, often used as a visible design element.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Strongest corner joint</li>
+                            <li>Mechanical locking</li>
+                            <li>Beautiful aesthetic</li>
+                            <li>No fasteners needed</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Very difficult</li>
+                            <li>Time-intensive</li>
+                            <li>Requires practice</li>
+                            <li>Special jigs helpful</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Fine drawer boxes, jewelry boxes, heirloom furniture, showcasing craftsmanship</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Dovetail saw, chisels, marking gauge, dovetail jig (for router method)</p>
+                </div>
+            </div>
+
+            <!-- Box/Finger Joint -->
+            <div class="joint-card">
+                <h2>Box/Finger Joint</h2>
+                <span class="difficulty medium">INTERMEDIATE</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Interlocking rectangular "fingers" cut into both pieces. Easier than dovetails but still provides excellent strength and lots of glue surface area.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Very strong</li>
+                            <li>Large glue area</li>
+                            <li>Attractive appearance</li>
+                            <li>Easier than dovetails</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Needs table saw jig</li>
+                            <li>Visible end grain</li>
+                            <li>Takes practice</li>
+                            <li>Must be precise</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Drawers, boxes, cases, decorative projects, shop-made storage</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Table saw with dado blade, box joint jig (easy to make)</p>
+                </div>
+            </div>
+
+            <!-- Dowel Joint -->
+            <div class="joint-card">
+                <h2>Dowel Joint</h2>
+                <span class="difficulty medium">INTERMEDIATE</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Wooden pegs (dowels) fit into aligned holes in both pieces to strengthen and align the joint. A modern alternative to mortise and tenon.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Stronger than butt joint</li>
+                            <li>No visible fasteners</li>
+                            <li>Good alignment</li>
+                            <li>Clean appearance</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Holes must align perfectly</li>
+                            <li>Needs dowel jig</li>
+                            <li>Can be fussy</li>
+                            <li>Hard to fix errors</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Edge-to-edge boards, frame corners, cabinet face frames, table tops</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Drill, dowel jig, dowel centers, dowels, glue</p>
+                </div>
+            </div>
+
+            <!-- Pocket Hole Joint -->
+            <div class="joint-card">
+                <h2>Pocket Hole Joint</h2>
+                <span class="difficulty easy">BEGINNER</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Angled holes drilled into one piece allow screws to be driven into the adjacent piece at an angle. Popular modern technique thanks to Kreg Jig.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Very fast</li>
+                            <li>Easy for beginners</li>
+                            <li>No clamps needed</li>
+                            <li>Strong enough for most</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Visible holes</li>
+                            <li>Not traditional</li>
+                            <li>Requires special jig</li>
+                            <li>Less refined look</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Face frames, quick projects, cabinet construction, furniture with hidden areas</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Pocket hole jig (Kreg Jig), drill, special screws, glue</p>
+                </div>
+            </div>
+
+            <!-- Rabbet Joint -->
+            <div class="joint-card">
+                <h2>Rabbet Joint</h2>
+                <span class="difficulty easy">BEGINNER</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    An L-shaped groove cut along the edge or end of a board. The second piece fits into this recess, creating more glue surface and a stronger connection than a butt joint.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Stronger than butt</li>
+                            <li>More glue surface</li>
+                            <li>Easy to make</li>
+                            <li>Hides one end grain</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Still needs fasteners</li>
+                            <li>Moderate strength only</li>
+                            <li>Groove may be visible</li>
+                            <li>Not for heavy loads</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Cabinet backs, drawer bottoms, simple boxes, picture frame backs</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Router, dado blade, or multiple passes with table saw</p>
+                </div>
+            </div>
+
+            <!-- Half-Lap Joint -->
+            <div class="joint-card">
+                <h2>Half-Lap Joint</h2>
+                <span class="difficulty medium">INTERMEDIATE</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Half the thickness is removed from each piece so they overlap and sit flush. Creates a strong joint with good glue surface while maintaining the full thickness.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Strong and rigid</li>
+                            <li>Flush surface</li>
+                            <li>Large glue area</li>
+                            <li>Versatile angles</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Waste material</li>
+                            <li>Must be precise depth</li>
+                            <li>Takes more time</li>
+                            <li>Visible joint line</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Picture frames, face frames, furniture stretchers, cross bracing</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Table saw or router, chisel for cleanup, dado blade helpful</p>
+                </div>
+            </div>
+
+            <!-- Biscuit Joint -->
+            <div class="joint-card">
+                <h2>Biscuit Joint</h2>
+                <span class="difficulty easy">BEGINNER</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    Football-shaped compressed wood wafers (biscuits) fit into matching crescent-shaped slots. The biscuits swell when glue is applied, creating a tight fit.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Fast and easy</li>
+                            <li>Great for alignment</li>
+                            <li>Hidden joint</li>
+                            <li>Adds strength</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Needs biscuit joiner</li>
+                            <li>Not as strong as M&T</li>
+                            <li>Biscuits cost money</li>
+                            <li>Limited applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Edge-to-edge glue-ups, miter reinforcement, cabinet face frames, quick assembly</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Biscuit joiner (plate joiner), biscuits, glue</p>
+                </div>
+            </div>
+
+            <!-- Tongue and Groove -->
+            <div class="joint-card">
+                <h2>Tongue & Groove</h2>
+                <span class="difficulty medium">INTERMEDIATE</span>
+                
+                <div class="strength-rating">
+                    <span class="strength-label">Strength:</span>
+                    <div class="strength-bars">
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar filled"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+                
+                <p class="joint-description">
+                    A raised rib (tongue) on one piece fits into a matching groove on another. Allows for wood movement while keeping pieces aligned. Classic flooring joint.
+                </p>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Perfect alignment</li>
+                            <li>Allows wood movement</li>
+                            <li>Large glue surface</li>
+                            <li>Hidden fasteners</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Requires router/shaper</li>
+                            <li>Time-consuming setup</li>
+                            <li>Loses some width</li>
+                            <li>Matching bits needed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-uses">
+                    <h4>Best For:</h4>
+                    <p>Flooring, paneling, table tops, wide glue-ups, cabinet backs</p>
+                </div>
+                
+                <div class="tools-needed">
+                    <h4>Tools Needed:</h4>
+                    <p>Router with tongue & groove bits, or shaper, or special table saw setup</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>💡 Joint Selection Guide</h3>
+            
+            <div class="tip-box">
+                <strong>For Beginners:</strong> Start with butt joints reinforced with pocket screws, then progress to miter joints and dados.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Speed:</strong> Pocket holes and biscuits are the fastest strong joints. Great for production work.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Strength:</strong> Mortise & tenon and dovetails are the strongest. Half-laps and box joints are excellent compromises.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Appearance:</strong> Dovetails and box joints showcase craftsmanship. Dowels and biscuits are completely hidden.
+            </div>
+            
+            <div class="tip-box">
+                <strong>For Drawers:</strong> Dovetails (traditional), box joints (strong and beautiful), or dado/rabbet combinations (practical).
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>🔧 General Joint-Making Tips</h3>
+            <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                <li><strong>Test Fit First:</strong> Always do a dry assembly before glue</li>
+                <li><strong>Sharp Tools:</strong> Sharp chisels and saw blades = clean joints</li>
+                <li><strong>Measure Twice:</strong> Accuracy is everything in joinery</li>
+                <li><strong>Glue Surface:</strong> More glue surface = stronger joint</li>
+                <li><strong>Wood Movement:</strong> Consider seasonal expansion/contraction</li>
+                <li><strong>Practice:</strong> Make test joints in scrap wood first</li>
+                <li><strong>Proper Clamping:</strong> Use enough clamps, don't over-tighten</li>
+                <li><strong>Glue Squeeze-Out:</strong> Remove while still wet or after fully dry</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Woodworking Pro - Free Woodworking Tools & Resources</p>
+    </footer>
+</body>
+</html>
