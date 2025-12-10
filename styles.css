@@ -53,6 +53,54 @@ nav {
     color: #f39c12;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 2000;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background: #f39c12;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #f39c12;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
